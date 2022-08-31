@@ -1,0 +1,35 @@
+{
+  "name": "mern-login",
+  "version": "1.0.0",
+  "description": "To create a successful login and logout page using a username and password. The user must be able to access the homepage upon successful login and see their name displayed. Upon logout, the user is taken back to the main login page. Unsuccessful login/wrong credentials will display an error message. The homepage should only be seen once the user is successfully logged in.<br>\r ![Log In Page](login/public/assets/images/login-page.png) <br>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verokoles/mern-login.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.11",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.9.0"
+  },
+  "bugs": {
+    "url": "https://github.com/verokoles/mern-login/issues"
+  },
+  "homepage": "https://github.com/verokoles/mern-login#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
