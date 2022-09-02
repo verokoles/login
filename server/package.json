@@ -4,8 +4,11 @@
   "description": "To create a successful login and logout page using a username and password. The user must be able to access the homepage upon successful login and see their name displayed. Upon logout, the user is taken back to the main login page. Unsuccessful login/wrong credentials will display an error message. The homepage should only be seen once the user is successfully logged in.<br>\r ![Log In Page](login/public/assets/images/login-page.png) <br>",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
