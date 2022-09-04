@@ -1,4 +1,5 @@
-const Validator = require("validator");
+const Validator = require("express-validator");
+const EmptyValidator= require("validator");
 const isEmpty = require("is-empty");
 module.exports = function validateRegisterInput(data) {
   let errors = {};
@@ -10,22 +11,22 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 
 // check name
-  if (Validator.isEmpty(data.name)) {
+  if (EmptyValidator.isEmpty(data.name)) {
     errors.name = "Name field is required";
   }
 
 // check if username valid/not empty
-  if (Validator.isEmpty(data.username)) {
+  if (EmptyValidator.isEmpty(data.username)) {
     errors.username = "username field is required";
-  } else if (!Validator.isusername(data.username)) {
+  } else if (!Validator.isUserName(data.username)) {
     errors.username = "username is invalid";
   }
 
 // check if password is valid/not empty
-  if (Validator.isEmpty(data.password)) {
+  if (EmptyValidator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }
-if (Validator.isEmpty(data.password2)) {
+if (EmptyValidator.isEmpty(data.password2)) {
     errors.password2 = "Confirm password field is required";
   }
 if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
