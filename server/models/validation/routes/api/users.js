@@ -4,10 +4,11 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../../../config/keys");
+const { body, validationResult } = require('express-validator');
 
-//input validation
-const validateLoginInput= require("../../../validation/login");
-const validateRegisterInput= require("../../../validation/register");
+// //input validation
+// const validateLoginInput= require("../../../validation/login");
+// const validateRegisterInput= require("../../../validation/register");
 
 
 //user.js model loaded
@@ -17,11 +18,15 @@ const User = require("../../../../models/User");
 // @route POST api/users/register
 // @desc Register user
 // @access Public
-router.post("/register", (req, res) => {
-    // form valid.
-  const { errors, isValid } = validateRegisterInput(req.body);
+router.post("/register", [
+  body('name', 'Full Name required').not().isEmpty(),
+  body('username', 'User Name is required').not().isEmpty(),
+  body('password', 'Password is required').isEmpty()
+],
+ (req, res) => {
+  let errors = validationResult(req);
   // check if valid
-    if (!isValid) {
+    if (!errors.isEmpty) {
       return res.status(400).json(errors);
     }
     //mongodb, see if user exists
@@ -57,11 +62,11 @@ router.post("/register", (req, res) => {
 // @access Public
 router.post("/login", (req, res) => {
     // form valid.
-  const { errors, isValid } = validateLoginInput(req.body);
-  // check validation
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
+    let errors = validationResult(req);
+    // check if valid
+      if (!errors.isEmpty) {
+        return res.status(400).json(errors);
+      }
   const username = req.body.username;
     const password = req.body.password;
   // find user by username
