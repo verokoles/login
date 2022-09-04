@@ -1,3 +1,4 @@
+// import actions from types.js
 import {
     SET_CURRENT_USER,
     USER_LOADING
