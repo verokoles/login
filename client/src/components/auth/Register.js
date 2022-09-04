@@ -26,8 +26,8 @@ import {
     return ComponentWithRouterProp;
   }
 class Register extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "",
       username: "",
@@ -39,7 +39,8 @@ class Register extends Component {
   componentDidMount() {
     // If logged in and user navigates to Register page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+        console.log(this.props);
+      this.props.router.location.pathname("/dashboard");
     }
   }
 componentWillReceiveProps(nextProps) {
