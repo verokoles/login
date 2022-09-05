@@ -43,8 +43,12 @@ To install dependancies, run the following commands:
 
      - install all packages and set up the backend, <br>
      - connect MongoDB database with user and set the URI in server/config/keys <br>
+     - set up API routes with Postman to verify
      - create react-app in client directory
      - create components from the landing page, the login/register pages, and the homepage
+     - set up REDUX for global managing, then link store to REACT components
+     - display errors from backend in REACT forms
+     - create protected routes for registered users
      - 
      - run `npm start` from root level to start up the MERN login form!
 
