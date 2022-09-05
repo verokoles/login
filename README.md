@@ -4,7 +4,7 @@
 ## Purpose:heavy_exclamation_mark:
 
 To create a successful login and logout page using a username and password. The user must be able to access the homepage upon successful login and see their name displayed. Upon logout, the user is taken back to the main login page. Unsuccessful login/wrong credentials will display an error message. The homepage should only be seen once the user is successfully logged in.<br>
-![Log In Page](client/public/mern-login.png) <br>
+![Log In Page](client/public/mern-app.png) <br>
 
 ## Table of Contents::mag:
 
@@ -41,14 +41,22 @@ To install dependancies, run the following commands:
      ```  
      `npm i express validator` <br>
 
+I. Initialize App on Backend
      - install all packages and set up the backend, <br>
      - connect MongoDB database with user and set the URI in server/config/keys <br>
-     - set up API routes with Postman to verify
+     - set up API routes with Postman to verify routes
+
+II. Frontend & Redux Setup
      - create react-app in client directory
      - create components from the landing page, the login/register pages, and the homepage
+     - `npm i axios classnames jwt-decode react-redux react-router-dom redux redux-thunk`
      - set up REDUX for global managing, then link store to REACT components
+     - set up in SRC: actions, components, and reducers directories
+     - react-router-dom in App.js to define routing paths
      - display errors from backend in REACT forms
-     - create protected routes for registered users
+     - create protected routes for registered users 
+  
+III. Linking Redux with React Components
      - 
      - run `npm start` from root level to start up the MERN login form!
 
