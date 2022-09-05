@@ -53,12 +53,21 @@ II. Frontend & Redux Setup
      - set up REDUX for global managing, then link store to REACT components
      - set up in SRC: actions, components, and reducers directories
      - react-router-dom in App.js to define routing paths
-     - display errors from backend in REACT forms
-     - create protected routes for registered users 
   
 III. Linking Redux with React Components
-     - 
-     - run `npm start` from root level to start up the MERN login form!
+     - use connect() from react-redux to connect components
+     - display errors from backend in REACT forms
+     - create protected routes for registered users 
+     - wrap components at the bottom of files in `export withRotuer()`.
+     - import propTypes with proptypes package, link REDUX to components and display erros in from
+     - create Homepage.js for when users are logged on
+     - create protected routes: (Documentation)[https://ui.dev/react-router-protected-routes-authentication]
+     - tie it all together by checking localStorage for token with JWT if user logged on or if they refresh the app. Define Hompeage as private route.
+     - last step: componentDidMount() { .. If logged in and user navigates to Register and Login pages, should redirect them to homepage if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/homepage");
+
+
+IV. Run `npm start` from root level to start up the MERN login form!
 
 
 
