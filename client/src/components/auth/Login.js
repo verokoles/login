@@ -20,7 +20,7 @@ class Login extends Component {
     }
   }
   
-componentWillReceiveProps(nextProps) {
+  static getDerivedStateFromProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/homepage"); // push user to hoempage when they login
     }

@@ -41,9 +41,8 @@ class App extends Component {
             <Route exact path="/" element={<Landing/>} />
             <Route exact path="/register" element={<Register/>} />
             <Route exact path="/login" element={<Login/>} />
-            </Routes>
-            <Routes>
               <Route path="/homepage" element={
+                // set homepage to private so only logged in users can access it 
                 <PrivateRoute>
                   <Homepage/>
                 </PrivateRoute>

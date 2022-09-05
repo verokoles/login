@@ -67,7 +67,7 @@ To install dependancies, run the following commands:
       this.props.history.push("/homepage");
 
 
-IV. Run `npm start` from root level to start up the MERN login form!
+### IV. Run `npm start` from root level to start up the MERN login form!
 
 
 

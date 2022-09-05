@@ -43,7 +43,8 @@ class Register extends Component {
       this.props.router.location.pathname("/homepage");
     }
   }
-componentWillReceiveProps(nextProps) {
+  // componentWillReceive no longer used, use static 
+  static getDerivedStateFromProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
