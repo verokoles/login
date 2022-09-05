@@ -10,7 +10,7 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/dashboard/Dashboard";
+import Homepage from "./components/homepage/Homepage";
 // check for token to keep user logged in
 if (localStorage.jwtToken) {
   // set auth token header auth
@@ -42,9 +42,9 @@ class App extends Component {
             <Route exact path="/login" element={<Login/>} />
             </Routes>
             <Routes>
-              <Route path="/dashboard" element={
+              <Route path="/homepage" element={
                 <PrivateRoute>
-                  <Dashboard/>
+                  <Homepage/>
                 </PrivateRoute>
               } />
             </Routes>
