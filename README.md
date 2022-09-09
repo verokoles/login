@@ -16,10 +16,11 @@ To create a successful login and logout page using a username and password. The 
 
 [Click Here](https://verokoles.github.io/mern-login/) to view the application live! <br>
 
-<!-- Successful LogIn takes user to homepage:
-![Successful LogIn takes user to homepage]() <br>
-Unsuccecssful Log In:
-![Error Message for wrong credentials]() -->
+Pages:
+![Registration Page](client/public/register.png) <br>
+![Log In Page](client/public/login.png) <br>
+![Error Message for wrong credentials]()<br>
+![Homepage]()
 
 
 ## Installation

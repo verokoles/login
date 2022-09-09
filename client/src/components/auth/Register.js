@@ -9,7 +9,7 @@ import {
     useNavigate,
     useParams
   } from "react-router-dom";
-  
+
   function withRouter(Component) {
     function ComponentWithRouterProp(props) {
       let location = useLocation();
@@ -22,12 +22,12 @@ import {
         />
       );
     }
-  
+
     return ComponentWithRouterProp;
   }
 class Register extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       name: "",
       username: "",
@@ -39,12 +39,10 @@ class Register extends Component {
   componentDidMount() {
     // If logged in and user navigates to Register page, should redirect them to homepage
     if (this.props.auth.isAuthenticated) {
-        console.log(this.props);
-      this.props.router.location.pathname("/homepage");
+      // window.location = "/homepage";
     }
   }
-  // componentWillReceive no longer used, use static 
-  static getDerivedStateFromProps(nextProps) {
+componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
@@ -62,7 +60,7 @@ const newUser = {
       password: this.state.password,
       password2: this.state.password2
     };
-this.props.registerUser(newUser, this.props.history); 
+this.props.registerUser(newUser, this.props.history);
   };
 render() {
     const { errors } = this.state;

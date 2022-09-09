@@ -5,7 +5,6 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
-
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
@@ -41,12 +40,14 @@ class App extends Component {
             <Route exact path="/" element={<Landing/>} />
             <Route exact path="/register" element={<Register/>} />
             <Route exact path="/login" element={<Login/>} />
-              <Route path="/homepage" element={
-                // set homepage to private so only logged in users can access it 
-                <PrivateRoute>
-                  <Homepage/>
-                </PrivateRoute>
-              } />
+            </Routes>
+            <Routes>
+              <Route path="/Homepage" element={
+              <PrivateRoute>
+                <Homepage/>
+              </PrivateRoute>
+            } />
+
             </Routes>
           </div>
         </Router>

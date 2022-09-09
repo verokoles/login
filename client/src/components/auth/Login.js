@@ -14,15 +14,16 @@ class Login extends Component {
     };
   }
   componentDidMount() {
-    // If logged in and user navigates to Login page, should redirect them to hoempage
+    // If logged in and user navigates to Login page, 
+    // should redirect them to hoempage
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/homepage");
+      // window.location= "/homepage";
     }
   }
   
-  static getDerivedStateFromProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/homepage"); // push user to hoempage when they login
+      window.location= "/homepage"; // push user to hoempage when they login
     }
 if (nextProps.errors) {
       this.setState({
@@ -120,11 +121,10 @@ Login.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors
 });
 export default connect(
   mapStateToProps,
-  { loginUser }
-)(Login);
+  { loginUser })(Login);
